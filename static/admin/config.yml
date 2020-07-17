@@ -13,13 +13,33 @@ collections:
     folder: posts/recipe
     create: true
     fields:
-    - { label: layout, name: Layout, widget: hidden, default: recipe }
-    - { name: date, label: Date, widget: datetime }
-    - { name: title, label: Title, widget: string }
-    - { name: featured, label: Featured, widget: boolean }
-    - { name: thumbnail, label: Image, widget: image }
-    - { name: body, label: Body, widget: markdown }
-    - { name: rating, label: Rating, widget: number, min: 1, max: 5, default: 3 }
-    - { name: tags, label: Tags, widget: list, allow_add: true, default: [food] }
-    - { name: ingredients, label: Ingredients, widget: list, allow_add: true }
-    - { name: steps, label: Steps, widget: list, allow_add: true }
+      - { label: layout, name: Layout, widget: hidden, default: recipe }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title, widget: string }
+      - { name: featured, label: Featured, widget: boolean }
+      - { name: thumbnail, label: Image, widget: image }
+      - { name: body, label: Body, widget: markdown }
+      - {
+          name: rating,
+          label: Rating,
+          widget: number,
+          min: 1,
+          max: 5,
+          default: 3,
+        }
+      - {
+          name: tags,
+          label: Tags,
+          widget: list,
+          allow_add: true,
+          default: [food],
+        }
+      - {
+          name: ingredients,
+          label: Ingredients,
+          widget: list,
+          allow_add: true,
+          label_singular: stuff,
+          fields: { label: Ingredient, name: ingredient, widget: string },
+        }
+      - { name: steps, label: Steps, widget: list, allow_add: true }
