@@ -1,6 +1,10 @@
 backend:
   name: git-gateway
   branch: master
+  commit_messages:
+    create: Create {{collection}} "{{slug}}"
+    update: Update {{collection}} "{{slug}}"
+    delete: Delete {{collection}} "{{slug}}"
 
 publish_mode: editorial_workflow
 
@@ -10,8 +14,9 @@ public_folder: /img
 collections:
   - name: recipe
     label: Recipe
-    folder: posts/recipe
+    folder: src/recipes
     create: true
+    slug: {{slug}}
     fields:
       - { label: layout, name: Layout, widget: hidden, default: recipe }
       - { name: date, label: Date, widget: datetime }
