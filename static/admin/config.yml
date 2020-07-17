@@ -20,6 +20,6 @@ collections:
     - { name: thumbnail, label: Image, widget: image }
     - { name: body, label: Body, widget: markdown }
     - { name: rating, label: Rating, widget: number, min: 1, max: 5, default: 3 }
-    - { name: tags, label: Tags, widget: List, allow_add: true, default: [food] }
-    - { name: ingredients, label: Ingredients, widget: List, allow_add: true }
-    - { name: steps, label: Steps, widget: List, allow_add: true }
+    - { name: tags, label: Tags, widget: list, allow_add: true, default: [food] }
+    - { name: ingredients, label: Ingredients, widget: list, allow_add: true }
+    - { name: steps, label: Steps, widget: list, allow_add: true }
