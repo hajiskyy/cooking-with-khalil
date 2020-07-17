@@ -40,6 +40,6 @@ collections:
           widget: list,
           allow_add: true,
           label_singular: stuff,
-          fields: { label: Ingredient, name: ingredient, widget: string },
+          field: { label: Ingredient, name: ingredient, widget: string }
         }
       - { name: steps, label: Steps, widget: list, allow_add: true }
