@@ -1,9 +1,12 @@
 import React from 'react'
+import Layout from "../components/layout"
 
-export default function RecipeTemplate() {
+import '../scss/index.scss'
+
+export default function RecipeTemplate({ pageContext: { id } }) {
   return (
-    <div>
-      Recipe
-    </div>
+    <Layout>
+      {id}
+    </Layout>
   )
 }
