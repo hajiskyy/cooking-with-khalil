@@ -1,36 +1,54 @@
 
+// const _ = require('lodash')
+const path = require('path')
+const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+const { createFilePath } = require('gatsby-source-filesystem')
 
-// exports.createPages = async({ actions, graphql, reporter }) => {
-//   const { createPage } = actions
-//   const RecipeTemplate = require.resolve('./src/templates/recipeTemplates.js')
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createPage } = actions
+  const RecipeTemplate = require.resolve('./src/templates/recipeTemplate.js')
 
-//   const reult = await qraphql(`
-//     {
-//       allMarkdownRemark(limis: 1000){
-//         edges {
-//           node {
-//             id
-//             fields {
-//               slug
-//             }
-//             frontmatter{
-//               tags
-//               title
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `).then((result) => {
-//     if(result.errors){
-//       results.errors.forEach(e => console.error(e.toString()))
-//       return Promise.reject(result.errors)
-//     }
+  try {
+    const result = await graphql(`
+    {
+      allMarkdownRemark(limit: 1000){
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter{
+              tags
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
+    const posts = result.data.allMarkdownRemark.edges;
 
-//     console.log(result)
+    posts.forEach(edge => {
+      const id = edge.node.id
+      console.log(edge.node.fields.slug)
+      createPage({
+        path: edge.node.fields.slug,
+        tags: edge.node.frontmatter.tags,
+        component: RecipeTemplate,
+        context: {
+          id
+        }
+      })
+    });
 
-//   })
-// }
+  } catch (error) {
+    console.error(error)
+  }
+
+
+
+}
 
 
 
