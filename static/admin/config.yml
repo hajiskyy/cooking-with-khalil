@@ -16,7 +16,7 @@ collections:
     label: Recipe
     folder: src/posts/recipes
     create: true
-    slug: {{slug}}
+    slug: "{{slug}}"
     fields:
       - { label: layout, name: Layout, widget: hidden, default: recipe }
       - { name: date, label: Date, widget: datetime }
