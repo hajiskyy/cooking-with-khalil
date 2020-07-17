@@ -1,0 +1,70 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+body {
+  @apply bg-white;
+}
+
+// $primary: $c
+
+.header {
+  background: url("../images/background.jpg");
+  @apply bg-light-primary;
+  opacity: 0.9;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+section {
+  @apply px-5;
+  @apply py-16;
+
+  /* Medium (md) */
+  @screen md {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+  /* Large (lg) */
+  @screen lg {
+    padding-right: 8rem;
+    padding-left: 8rem;
+  }
+}
+.sub-heading {
+  @apply relative pl-8 text-light-primary font-bold tracking-widest my-3;
+
+  &::before {
+    position: absolute;
+    content: "" !important;
+    width: 1.5rem !important;
+    height: 0.5rem !important;
+    left: 0;
+    bottom: 33%;
+    @apply bg-light-secondary;
+  }
+}
+
+.btn {
+  @apply mx-10 bg-light-primary text-white rounded-full py-3 px-5 transition ease-in-out duration-500;
+  &:hover {
+    @apply bg-opacity-75;
+  }
+}
+
+// SIDE NAV
+
+.side-nav {
+  @apply h-screen w-w300 bg-light-primary fixed z-30 right-0 transform transition-transform ease-out duration-300 shadow;
+
+}
+
+.side-nav-links a {
+  @apply text-white w-full text-center border-r-4 border-light-secondary my-3;
+  &:hover,
+  &:active {
+    @apply opacity-75;
+  }
+}
