@@ -34,16 +34,26 @@ section {
   }
 }
 .sub-heading {
-  @apply relative pl-8 text-light-primary font-bold tracking-widest my-3;
+  @apply relative pl-8 text-light-primary font-extrabold tracking-widest my-3 text-center;
+
+  /* Medium (md) */
+  @screen md {
+    @apply text-left;
+  }
 
   &::before {
     position: absolute;
     content: "" !important;
     width: 1.5rem !important;
-    height: 0.5rem !important;
-    left: 0;
+    height: 0.3rem !important;
+    left: 33%;
     bottom: 33%;
     @apply bg-light-secondary;
+
+    /* Medium (md) */
+    @screen md {
+      @apply left-0;
+    }
   }
 }
 
@@ -58,7 +68,6 @@ section {
 
 .side-nav {
   @apply h-screen w-w300 bg-light-primary fixed z-30 right-0 transform transition-transform ease-out duration-300 shadow;
-
 }
 
 .side-nav-links a {

@@ -40,7 +40,7 @@ export default function Recent() {
 
   return (
     <section className="bg-white text-center pb-0">
-      <h5 className="sub-heading text-left">RECENT</h5>
+      <h5 className="sub-heading">RECENT</h5>
       <Cards>
         {items.map(item => <Card item={item} key={item.id} />)}
       </Cards>
