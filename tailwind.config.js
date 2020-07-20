@@ -2,23 +2,9 @@ module.exports = {
   important: true,
   purge: [],
   theme: {
-    colors: {
-      black: '#000',
-      white: '#fff',
-      solar: {
-        primary: "#ffcdb2",
-        tetiary: "#ffb4a2",
-        secondary: "#6d6875"
-      },
-      light: {
-        primary: "#14213D",
-        tetiary: "#E5E5E5",
-        secondary: "#FCA311"
-      }
-    },
     fill: theme => ({
       'primary': theme('colors.light.primary'),
-      'white': theme('colors.white') 
+      'white': theme('colors.white')
     }),
     extend: {
       borderRadius: {
@@ -41,6 +27,20 @@ module.exports = {
       strokeWidth: {
         '3': '3',
         '4': '4',
+      },
+      colors: {
+        black: '#000',
+        white: '#fff',
+        solar: {
+          primary: "#ffcdb2",
+          tetiary: "#ffb4a2",
+          secondary: "#6d6875"
+        },
+        light: {
+          primary: "#14213D",
+          tetiary: "#E5E5E5",
+          secondary: "#FCA311"
+        }
       }
 
     },

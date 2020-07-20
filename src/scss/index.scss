@@ -18,6 +18,18 @@ body {
   background-blend-mode: multiply;
 }
 
+.nav {
+  @apply w-full flex justify-between items-center px-5 py-5;
+
+  @screen md {
+    @apply px-16;
+  }
+
+  @screen lg {
+    @apply px-32;
+  }
+}
+
 section {
   @apply px-5 py-16 z-10;
 
@@ -48,14 +60,48 @@ section {
     // left: 33%;
     bottom: -15%;
     @apply bg-light-secondary;
+  }
+}
 
+.card-deck {
+  @apply mx-auto gap-5 grid grid-cols-1 w-full my-10 items-center justify-center;
+
+  @screen md {
+    @apply grid-cols-3;
+  }
+}
+
+.card {
+  @apply transform transition ease-in-out duration-300 w-full mx-auto card my-5 rounded-lg overflow-hidden shadow-lg;
+  min-height: 400px !important;
+  &:hover {
+    @apply -translate-y-3;
+  }
+  .card-content-image {
+    @apply relative w-full h-64;
+
+    .card-image {
+      @apply object-cover h-full top-0 left-0 w-full;
+    }
+  }
+
+  .card-content-text {
+    @apply px-6 py-4;
+
+    .card-title {
+      @apply font-bold text-xl mb-2;
+    }
+
+    .card-content-items {
+      @apply flex;
+    }
   }
 }
 
 .btn {
   @apply mx-10 font-bold bg-light-primary text-white rounded-full py-3 px-5 transition ease-in-out duration-500 transform;
   &:hover {
-    @apply bg-opacity-75 -translate-y-5;
+    @apply bg-opacity-75 -translate-y-2;
   }
 }
 
