@@ -4,14 +4,11 @@ import Navbar from "./navbar"
 
 
 
-const Header = ({ siteTitle, sideNav, toggle }) => {
-
- 
-
+const Header = ({ siteTitle, title }) => {
   return (
     <header className="relative w-full h-64 header flex flex-col items-center justify-center" >
       <Navbar siteTitle={siteTitle} />
-      <span className="text-3xl md:text-4xl font-bold text-center text-white w-full m-auto">{siteTitle}</span>
+      <span className="text-3xl md:text-4xl font-bold text-center text-white w-full m-auto">{title ? title : siteTitle}</span>
     </header >
   )
 }
