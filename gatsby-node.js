@@ -1,12 +1,12 @@
-
-// const _ = require('lodash')
+const _ = require('lodash')
 const path = require('path')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const RecipeTemplate = require.resolve('./src/templates/recipeTemplate.js')
+  const RecipeTemplate = require.resolve('./src/templates/recipe.js')
+  const TagsTemplate = require.resolve('./src/templates/tags.js')
 
   try {
     const result = await graphql(`
@@ -31,7 +31,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     posts.forEach(edge => {
       const id = edge.node.id
-      console.log(edge.node.fields.slug)
+
       createPage({
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
@@ -41,6 +41,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       })
     });
+
+
+    let tags = []
+
+    posts.forEach(edge => {
+      if(_.get(edge, `node.frontmatter.tags`)){
+        tags = tags.concat(edge.node.frontmatter.tags)
+      }
+    })
+
+    tags = _.uniq(tags)
+
+    // Make Tags Pages
+    tags.forEach(tag => {
+      const tagsPath = `/tags/${_.kebabCase(tag)}`
+
+      createPage({
+        path: tagsPath,
+        component: TagsTemplate,
+        context: {
+          tag,
+        }
+      })
+    })
 
   } catch (error) {
     console.error(error)
