@@ -19,8 +19,7 @@ body {
 }
 
 section {
-  @apply px-5;
-  @apply py-16;
+  @apply px-5 py-16 z-10;
 
   /* Medium (md) */
   @screen md {
@@ -34,7 +33,7 @@ section {
   }
 }
 .sub-heading {
-  @apply relative pl-8 text-light-primary font-extrabold tracking-widest my-3 text-center;
+  @apply relative text-light-primary font-extrabold tracking-widest my-3 text-center;
 
   /* Medium (md) */
   @screen md {
@@ -44,23 +43,19 @@ section {
   &::before {
     position: absolute;
     content: "" !important;
-    width: 1.5rem !important;
+    width: 3rem !important;
     height: 0.3rem !important;
-    left: 33%;
-    bottom: 33%;
+    // left: 33%;
+    bottom: -15%;
     @apply bg-light-secondary;
 
-    /* Medium (md) */
-    @screen md {
-      @apply left-0;
-    }
   }
 }
 
 .btn {
-  @apply mx-10 bg-light-primary text-white rounded-full py-3 px-5 transition ease-in-out duration-500;
+  @apply mx-10 font-bold bg-light-primary text-white rounded-full py-3 px-5 transition ease-in-out duration-500 transform;
   &:hover {
-    @apply bg-opacity-75;
+    @apply bg-opacity-75 -translate-y-5;
   }
 }
 

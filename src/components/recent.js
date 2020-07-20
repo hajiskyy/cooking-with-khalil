@@ -62,19 +62,20 @@ Cards.propTypes = {
 
 function Card({ item }) {
   return (
-    <div className="w-full mx-auto card my-5 rounded-lg overflow-hidden shadow-lg">
+    <div className="card transform hover:-translate-y-3 transition ease-in-out duration-300 w-full mx-auto card my-5 rounded-lg overflow-hidden shadow-lg">
       <Link to="#">
-        <div className=" relative w-full h-64 ">
-          <Img className="absolute object-cover h-full top-0 left-0 w-full" fluid={item.image} />
+        <div className="card-content-image relative w-full h-64 ">
+          <Img className="card-image absolute object-cover h-full top-0 left-0 w-full" fluid={item.image} />
+        </div>
+
+        <div className="px-6 py-4 card-content-text">
+          <div className="font-bold text-xl mb-2 card-title">{item.title}</div>
+          <div className="flex card-content-items">
+            <ClockIcon className="text-light-primary mr-2" />
+            <span>{item.time} min </span>
+          </div>
         </div>
       </Link>
-      <div className="px-6 py-4 \">
-        <div className="font-bold text-xl mb-2">{item.title}</div>
-        <div className="flex">
-          <ClockIcon className="text-light-primary mr-2" />
-          <span>{item.time} min </span>
-        </div>
-      </div>
     </div>
   )
 }
