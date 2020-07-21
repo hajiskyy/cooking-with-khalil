@@ -27,6 +27,7 @@ export default function Featured() {
           featured
           date
           rating
+          time
         }
         html
       }
