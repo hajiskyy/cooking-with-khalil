@@ -98,6 +98,10 @@ section {
   }
 }
 
+.chip {
+  @apply mr-5 bg-light-secondary opacity-75 text-light-primary font-bold p-1 rounded;
+}
+
 .btn {
   @apply mx-10 font-bold bg-light-primary text-white rounded-full py-3 px-5 transition ease-in-out duration-500 transform;
   &:hover {
