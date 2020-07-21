@@ -4,6 +4,7 @@ date: 2020-07-17T14:49:19.957Z
 title: Tasty Breakfast Burritos
 featured: true
 thumbnail: /img/annotation-2020-06-25-100459.png
+time: 30
 rating: 4
 tags:
   - food
