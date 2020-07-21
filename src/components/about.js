@@ -26,7 +26,7 @@ export default function About() {
             <Img className="h-full w-full rounded-circle" fixed={data.sectionImage.childImageSharp.fixed} objectFit="cover" />
           </div>
           <div className="flex w-full flex-col justify-center items-center my-5 md:pl-10">
-            <p className="my-3 text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula nisi, cursus sit amet hendrerit nec, porta ut velit. Maecenas tristique, dui sit amet sollicitudin sagittis, ante metus blandit nisi, nec interdum sapien lorem eu purus. Phasellus efficitur ligula ante, vitae congue tortor consequat at. Quisque ullamcorper vitae lacus dignissim mollis. Duis dignissim tellus quis nisl fringilla vehicula. Etiam placerat</p>
+            <p className="my-3 text-white text-center md:text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula nisi, cursus sit amet hendrerit nec, porta ut velit. Maecenas tristique, dui sit amet sollicitudin sagittis, ante metus blandit nisi, nec interdum sapien lorem eu purus. Phasellus efficitur ligula ante, vitae congue tortor consequat at. Quisque ullamcorper vitae lacus dignissim mollis. Duis dignissim tellus quis nisl fringilla vehicula. Etiam placerat</p>
           </div>
         </div>
       </section>

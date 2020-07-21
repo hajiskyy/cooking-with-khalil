@@ -12,12 +12,12 @@ const Posts = ({ posts }) => {
         <div className="card-content-text">
           <div className="card-title">{post.frontmatter.title}</div>
           <div className="card-content-items">
-            <ClockIcon className="text-light-primary mr-2" />
-            <span>{post.frontmatter.time} min </span>
+            <ClockIcon className="text-light-primary mr-2 stroke-3" />
+            <span className="font-semibold">{post.frontmatter.time} min </span>
           </div>
           <div className="card-content-items flex mt-3">
             {
-              post.frontmatter.tags.map((tag, index) => <span className="mr-5 bg-light-secondary opacity-75 text-light-primary font-bold p-1 rounded" key={index}>#{tag}</span>)
+              post.frontmatter.tags.map((tag, index) => <span className="chip" key={index}>#{tag}</span>)
             }
           </div>
         </div>
@@ -51,8 +51,6 @@ const Recent = () => {
         }
       }
     `)
-  console.log(data)
-
   return (
     <section className="bg-white text-center pb-0">
       <h5 className="sub-heading">RECENT</h5>

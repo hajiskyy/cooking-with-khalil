@@ -9,7 +9,7 @@ import SideNavProvider from "../components/sideNavProvider"
 
 function TagList({ tags }) {
   return tags.map((tag, i) => <li className="list-none text-3xl font-semibold " key={i}>
-    <Link to={`/tag/${kebabCase(tag.fieldValue)}`}> {tag.fieldValue}</Link>
+    <Link className="capitalize" to={`/tag/${kebabCase(tag.fieldValue)}`}> {tag.fieldValue}</Link>
   </li>)
 }
 
@@ -25,8 +25,8 @@ const Tags = ({ data }) => {
         <Sidenav siteTitle={siteTitle} />
         <Header title="Tags" siteTitle={siteTitle} />
       </SideNavProvider>
-      <section className="h-screen">
-        <div className="divide-y divide-gray-400">
+      <section className="min-h-full mb-48">
+        <div className="divide-y divide-gray-400 my-24">
           <TagList tags={tags} />
         </div>
       </section>

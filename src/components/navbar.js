@@ -5,14 +5,14 @@ import { sideNavContext } from "./sideNavProvider"
 
 export default function Navbar({ background, siteTitle }) {
   let classList = "nav "
-  classList += background ? background : "";
+  classList += background ? "bg-light-primary" : "";
   const [, toggle] = useContext(sideNavContext)
   const toggleSideNav = () => {
     toggle(true)
   }
   return (
     <nav className={classList}>
-      <Link to="/" className="text-left text-white font-bold">{siteTitle}</Link>
+      <Link to="/" className="text-left text-white font-bold capitalize tracking-wider">{siteTitle}</Link>
       <div className="text-white w-40 justify-around hidden md:flex">
         <Link to="recipes">Recipes</Link>
         <Link to="about">About</Link>
