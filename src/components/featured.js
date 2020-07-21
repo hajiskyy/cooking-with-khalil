@@ -14,6 +14,7 @@ export default function Featured() {
         frontmatter {
           thumbnail
           title
+          time
           tags
           steps
           ingredients

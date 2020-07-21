@@ -29,9 +29,9 @@ const RecipeTemplate = ({ data, pageContext }) => {
           </div>
           <div className="text-content w-full lg:w-10/12 lg:pl-10">
             <h5 className="text-center lg:text-left text-4xl font-bold my-8 text-light-primary capitalize">{recipe.title}</h5>
-            <span to="#" className="flex w-24 justify-between items-center rounded-full">
-              <ClockIcon />
-              {recipe.time}
+            <span to="#" className="flex w-24r rounded-full font-semibold">
+              <ClockIcon className="stroke-3 mr-2" />
+              {recipe.time} min
             </span>
             <div className="w-full my-10">
               {recipe.tags.map((tag, i) => (<Link to={`/tag/${kebabCase(tag)}`} > <span className="chip mr-5" key={i}>#{tag}</span> </Link>))}
@@ -86,6 +86,7 @@ query RecipePage ($id: String!) {
         steps
         thumbnail
         tags
+        time
       }
     }
   }

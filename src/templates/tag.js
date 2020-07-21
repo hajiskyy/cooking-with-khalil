@@ -16,8 +16,8 @@ const Posts = ({ posts }) => {
         </div>
         <div className="card-content-text">
           <div className="card-title">{post.node.frontmatter.title}</div>
-          <div className="card-content-items">
-            <ClockIcon className="text-light-primary mr-2" />
+          <div className="card-content-items font-semibold">
+            <ClockIcon className="text-light-primary mr-2 stroke-3" />
             <span>{post.node.frontmatter.time} min </span>
           </div>
           <div className="card-content-items flex mt-3">
@@ -78,6 +78,7 @@ query TagsPage ($tag: String!) {
               tags
               featured
               date
+              time
             }
           }
         }

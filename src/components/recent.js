@@ -41,6 +41,7 @@ const Recent = () => {
               title
               tags
               steps
+              time
               ingredients
               featured
               date
