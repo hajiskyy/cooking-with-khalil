@@ -61,7 +61,7 @@ const Recent = () => {
     `)
   return (
     <section className="bg-white text-center pb-0">
-      <h5 className="sub-heading">RECENT</h5>
+      <h1 className="sub-heading">RECENT</h1>
       <div className="card-deck">
         <Posts posts={data.allMarkdownRemark.nodes}/>
       </div>
