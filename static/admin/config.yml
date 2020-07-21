@@ -23,6 +23,7 @@ collections:
       - { name: title, label: Title, widget: string }
       - { name: featured, label: Featured, widget: boolean, default: false }
       - { name: thumbnail, label: Image, widget: image }
+      - { name: time, label: Cooking Time (minutes), widget: number }
       - { name: body, label: Body, widget: markdown }
       - {
           name: rating,
