@@ -4,6 +4,7 @@ date: 2020-07-17T15:36:33.723Z
 title: Title
 featured: true
 thumbnail: /img/annotation-2020-06-25-100928.png
+time: 10
 rating: 5
 tags:
   - food
