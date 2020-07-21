@@ -38,7 +38,6 @@ collections:
           label: Tags,
           widget: list,
           allow_add: true,
-          default: [food],
         }
       - {
           name: ingredients,
