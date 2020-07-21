@@ -1,6 +1,8 @@
 module.exports = {
   important: true,
-  purge: [],
+  purge: [
+    './src/**/*.js',
+  ],
   theme: {
     fill: theme => ({
       'primary': theme('colors.light.primary'),
