@@ -9,6 +9,7 @@ import Navbar from '../components/navbar'
 import ClockIcon from "../icons/clock.svg"
 import ShareIcon from "../icons/share.svg"
 import TwitterIcon from "../icons/twitter.svg"
+import Img from "gatsby-image"
 
 import '../scss/index.scss'
 
@@ -25,7 +26,7 @@ const RecipeTemplate = ({ data, pageContext }) => {
       <section>
         <div className="main-content lg:flex w-full">
           <div className="flex-shrink-0 mx-auto overflow-hidden rounded-lg w-full h-400 lg:w-w400 lg:h-h400">
-            <img src={recipe.thumbnail} className="w-full h-full object-center" alt={recipe.title} />
+            <Img fluid={recipe.thumbnail.childImageSharp.fluid} className="w-full h-full object-center" alt={recipe.title} />
           </div>
           <div className="text-content w-full lg:w-10/12 lg:pl-10">
             <h5 className="text-center lg:text-left text-4xl font-bold my-8 text-light-primary capitalize">{recipe.title}</h5>
@@ -84,7 +85,13 @@ query RecipePage ($id: String!) {
         title
         ingredients
         steps
-        thumbnail
+        thumbnail {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         tags
         time
       }

@@ -6,13 +6,14 @@ import SideNavProvider from "../components/sideNavProvider"
 import { graphql, Link } from 'gatsby'
 import Header from '../components/header'
 import ClockIcon from "../icons/clock.svg"
+import Img from "gatsby-image"
 
 const Posts = ({ posts }) => {
   return posts.map((post, i) => (
     <div className="card" key={i}>
       <Link to={post.node.fields.slug}>
         <div className="card-content-image">
-          <img className="card-image" src={post.node.frontmatter.thumbnail} alt={post.node.frontmatter.title} />
+          <Img className="card-image" fluid={post.node.frontmatter.thumbnail.childImageSharp.fluid} alt={post.node.frontmatter.title} />
         </div>
         <div className="card-content-text">
           <div className="card-title">{post.node.frontmatter.title}</div>
@@ -73,7 +74,13 @@ query TagsPage ($tag: String!) {
               slug
             }
             frontmatter {
-              thumbnail
+              thumbnail {
+                childImageSharp {
+                  fluid(maxWidth: 800) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
               title
               tags
               featured

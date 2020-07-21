@@ -1,13 +1,14 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from "gatsby"
 import ClockIcon from "../icons/clock.svg"
+import Img from "gatsby-image"
 
 const Posts = ({ posts }) => {
   return posts.map((post, i) => (
     <div className="card" key={i}>
       <Link to={post.fields.slug}>
         <div className="card-content-image">
-          <img className="card-image" src={post.frontmatter.thumbnail} alt={post.frontmatter.title} />
+          <Img className="card-image" fluid={post.frontmatter.thumbnail.childImageSharp.fluid} alt={post.frontmatter.title} />
         </div>
         <div className="card-content-text">
           <div className="card-title">{post.frontmatter.title}</div>
@@ -37,7 +38,13 @@ const Recent = () => {
               slug
             }
             frontmatter {
-              thumbnail
+              thumbnail {
+                childImageSharp {
+                  fluid(maxWidth: 800) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
               title
               tags
               steps
