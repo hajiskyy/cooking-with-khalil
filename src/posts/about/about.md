@@ -1,4 +1,5 @@
 ---
+Layout: about
 about: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula nisi,
   cursus sit amet hendrerit nec, porta ut velit. Maecenas tristique, dui sit
   amet sollicitudin sagittis, ante metus blandit nisi, nec interdum sapien lorem
