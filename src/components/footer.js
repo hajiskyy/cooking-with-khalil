@@ -5,12 +5,12 @@ import InstagramIcon from '../icons/instagram.svg';
 export default function Footer() {
   return (
     <>
-      <footer className="text-white bg-light-primary flex justify-between items-center px-5 md:px-40 py-5">
+      <footer className="text-white bg-light-primary flex justify-between items-center">
         <></>
         <span>
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()}, Built by
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.instagram.com/hajisky/">Hajisky</a>
         </span>
         <div className="flex">
           <a href="https://twitter.com/KKAleeyu">
@@ -19,7 +19,7 @@ export default function Footer() {
           <a href="https://www.instagram.com/cookingwithkhalil/" className="mx-5">
             <InstagramIcon  />
           </a>
-          <a href="#">
+          <a href="/">
             <FacebookIcon className="fill-white stroke-0" />
           </a>
         </div>

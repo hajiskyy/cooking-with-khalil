@@ -16,9 +16,22 @@ import '../scss/index.scss'
 const RecipeTemplate = ({ data, pageContext }) => {
   const recipe = data.markdownRemark.frontmatter;
   const siteTitle = data.site.siteMetadata.title;
+
+  const sharebutton = (e) => {
+    e.preventDefault()
+    if (navigator.share) {
+      navigator.share({
+        title: recipe.title,
+        text: `Check Out ${recipe.title}`,
+        url: `https://cooking-with-khalil.netlify.app/recipes/${kebabCase(recipe.title)}`
+      })
+        .then(() => console.log('Share complete'))
+        .error((error) => console.error('Could not share at this time', error))
+    }
+  }
   return (
     <Layout>
-      <SEO title={recipe.title} />
+      <SEO title={recipe.title} image={recipe.thumbnail} />
       <SideNavProvider>
         <Sidenav siteTitle={siteTitle} />
         <Navbar background={true} siteTitle={siteTitle} />
@@ -35,17 +48,17 @@ const RecipeTemplate = ({ data, pageContext }) => {
               {recipe.time} min
             </span>
             <div className="w-full my-10">
-              {recipe.tags.map((tag, i) => (<Link to={`/tag/${kebabCase(tag)}`} > <span className="chip mr-5" key={i}>#{tag}</span> </Link>))}
+              {recipe.tags.map((tag, i) => (<Link key={'t' + i} to={`/tag/${kebabCase(tag)}`} > <span className="chip mr-5" key={i}>#{tag}</span> </Link>))}
             </div>
             <span className="flex my-5 mx-auto justify-start items-center">
-              <Link to="#" className="chip flex bg-white border border-light-primary w-24 justify-between px-3 items-center rounded-full">
+              <a href={`https://cooking-with-khalil.netlify.app/recipes/${kebabCase(recipe.title)}`} onClick={sharebutton} className="cursor-pointer chip flex bg-white border border-light-primary w-24 justify-between px-3 items-center rounded-full">
                 <ShareIcon />
-            Share
-          </Link>
-              <Link to="#" className="chip flex bg-white border border-light-primary w-24 justify-between px-3 items-center rounded-full">
+                Share
+              </a>
+              <a href={`https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=Check Out ${recipe.title}&url=https://cooking-with-khalil.netlify.app/recipes/${kebabCase(recipe.title)}&via=KKAleeyu&hashtag=cookingwithkhalil`} data-text={`Check Out ${recipe.title} at`} data-via="KKAleeyu" data-hashtags="cookingwithkhalil" data-show-count="false" rel="noreferrer" target="_blank" className=" chip flex bg-white border border-light-primary w-24 justify-between px-3 items-center rounded-full">
                 <TwitterIcon className="stroke-0" />
             Tweet
-          </Link>
+          </a>
             </span>
             <div className="text-left mt-10 lg:mt-5" dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
           </div>
