@@ -26,7 +26,7 @@ export default function About() {
   return (
     <>
       <Wave className="fill-primary text-light-primary" />
-      <section className="bg-light-primary">
+      <section className="bg-light-primary" id="about">
         <h5 className="sub-heading text-white">ABOUT</h5>
         <div className="w-full flex justify-between items-center flex-col md:flex-row mt-16">
           <div className="image-container flex-shrink-0 w-w300 h-h300">

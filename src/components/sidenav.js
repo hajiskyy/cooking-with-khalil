@@ -20,8 +20,8 @@ export default function Sidenav({ siteTitle }) {
         <Cancel onClick={toggleSideNav} className="stroke-current stroke-4 cursor-pointer"/>
       </div>
       <div className="side-nav-links flex flex-col">
-        <Link to="#">Recipes</Link>
-        <Link to="#">About</Link>
+        <Link to="/tags">Recipes</Link>
+        <Link to="#about">About</Link>
       </div>
     </div >
   )
