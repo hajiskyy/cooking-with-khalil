@@ -55,3 +55,11 @@ collections:
           label_singular: Add Step,
           field: {label: Step, name: step, widget: string},
         }
+
+  - name: about
+    label: About Page
+    folder: src/posts/about
+    create: false
+    fields: 
+      - { label: Write a little about yourself, name: about, widget: markdown  }
+      - { label: Display Image, name: image, widget: image }
