@@ -7,5 +7,5 @@ about: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula nisi,
   Quisque ullamcorper vitae lacus dignissim mollis. Duis dignissim tellus quis
   nisl fringilla vehicula. Etiam placerat. Yeah man
 image: /img/person.jpg
-thumbnail: /img/person.jpg
+thumbnail: /img/profile-1.jpg
 ---
