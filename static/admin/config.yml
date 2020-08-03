@@ -66,5 +66,5 @@ collections:
           preview: false
         fields:
           - { label: layout, name: Layout, widget: hidden, default: about }
-          - { label: Tell them something about yourself, name: about, widget: mardown }
+          - { label: Tell them something about yourself, name: about, widget: markdown }
           - { label: Display Image, name: image, widget: image }
