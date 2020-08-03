@@ -32,7 +32,7 @@ const Posts = ({ posts }) => {
 const Recent = () => {
   const data = useStaticQuery(graphql`
       query MyQuery {
-        allMarkdownRemark(limit: 3, sort: {order: DESC, fields: frontmatter___date}) {
+        allMarkdownRemark(limit: 3, sort: {order: DESC, fields: frontmatter___date}, filter: {frontmatter: {Layout: {eq: "recipe"}}}) {
           nodes {
             fields {
               slug
