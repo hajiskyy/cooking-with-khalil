@@ -13,9 +13,15 @@ export default function Footer() {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </span>
         <div className="flex">
-          <TwitterIcon className="fill-white stroke-0" />
-          <InstagramIcon className="mx-5" />
-          <FacebookIcon className="fill-white stroke-0" />
+          <a href="https://twitter.com/KKAleeyu">
+            <TwitterIcon className="fill-white stroke-0" />
+          </a>
+          <a href="https://www.instagram.com/cookingwithkhalil/" className="mx-5">
+            <InstagramIcon  />
+          </a>
+          <a href="#">
+            <FacebookIcon className="fill-white stroke-0" />
+          </a>
         </div>
       </footer>
     </>
