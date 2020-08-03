@@ -59,7 +59,7 @@ collections:
   - name: about
     label: About Page
     folder: src/posts/about
-    create: false
+    create: true
     fields: 
       - { label: Write a little about yourself, name: about, widget: markdown  }
       - { label: Display Image, name: image, widget: image }
