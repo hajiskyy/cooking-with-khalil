@@ -19,6 +19,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               slug
             }
             frontmatter{
+              Layout
               tags
               title
             }
@@ -31,22 +32,23 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     posts.forEach(edge => {
       const id = edge.node.id
-
-      createPage({
-        path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
-        component: RecipeTemplate,
-        context: {
-          id
-        }
-      })
+      if (edge.node.frontmatter.Layout == "recipe") {
+        createPage({
+          path: edge.node.fields.slug,
+          tags: edge.node.frontmatter.tags,
+          component: RecipeTemplate,
+          context: {
+            id
+          }
+        })
+      }
     });
 
 
     let tags = []
 
     posts.forEach(edge => {
-      if(_.get(edge, `node.frontmatter.tags`)){
+      if (_.get(edge, `node.frontmatter.tags`)) {
         tags = tags.concat(edge.node.frontmatter.tags)
       }
     })
