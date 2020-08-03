@@ -56,13 +56,15 @@ collections:
           field: {label: Step, name: step, widget: string},
         }
 
-  - name: about
+  - name: page
     label: About Page
-    folder: src/posts/about
-    create: false
-    editor:
-      preview: false
-    fields: 
-      - { label: layout, name: Layout, widget: hidden, defualt: About }
-      - { label: Write a little about yourself, name: about, widget: markdown  }
-      - { label: Display Image, name: image, widget: image }
+    files:
+      - label: About Page
+        name: about
+        file: src/posts/about/about.md
+        editor:
+          preview: false
+        fields:
+          - { label: layout, name: Layout, widget: hidden, default: about }
+          - { label: Tell them something about yourself, name: about, widget: mardown }
+          - { label: Display Image, name: image, widget: image }
